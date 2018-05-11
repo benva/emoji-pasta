@@ -1,9 +1,6 @@
 module Main where
 
-import Lib
+import qualified Lib
 
 main :: IO ()
-main = do
-  putStrLn "Type a sentence that you want to emojify:"
-  sentence <- getLine
-  print $ parseSentence sentence
+main = Lib.main

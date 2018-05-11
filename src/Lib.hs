@@ -1,18 +1,9 @@
-module Lib ( parseSentence ) where
+module Lib ( main ) where
 
-import Data.List.Split
-import Data.Char
+import Parse
 
-parseSentence :: String -> [String]
-parseSentence = map (lowerCase . removePunc) . splitWords
-
-specialChars = ",.?!-:;\"\'()=*&^%$#@`~[]{}\\/<>_+"
-
-removePunc :: String -> String
-removePunc word = [ clean | clean <- word, clean `notElem` specialChars ]
-
-lowerCase :: String -> String
-lowerCase = map toLower
-
-splitWords :: String -> [String]
-splitWords = splitOn " "
+main :: IO ()
+main = do
+  putStrLn "Type a sentence that you want to emojify:"
+  sentence <- getLine
+  print $ parseSentence sentence
