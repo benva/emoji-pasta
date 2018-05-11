@@ -1,14 +1,18 @@
 module Lib ( parseSentence ) where
 
 import Data.List.Split
+import Data.Char
+
+parseSentence :: String -> [String]
+parseSentence = map (lowerCase . removePunc) . splitWords
 
 specialChars = ",.?!-:;\"\'()=*&^%$#@`~[]{}\\/<>_+"
 
-parseSentence :: String -> [String]
-parseSentence = map removePunc . splitWords
-
 removePunc :: String -> String
 removePunc word = [ clean | clean <- word, clean `notElem` specialChars ]
+
+lowerCase :: String -> String
+lowerCase = map toLower
 
 splitWords :: String -> [String]
 splitWords = splitOn " "
