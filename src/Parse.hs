@@ -1,4 +1,4 @@
-module Parse ( addEmoji, parseSentence, splitWords ) where
+module Parse ( addEmoji, clean, splitWords ) where
 
 import Data.List.Split
 import Data.Char
@@ -7,8 +7,8 @@ addEmoji :: String -> [String] -> [String]
 addEmoji emoji [] = []
 addEmoji emoji (x:y) = x : emoji : addEmoji emoji y
 
-parseSentence :: String -> [String]
-parseSentence = map (lowerCase . removePunc) . splitWords
+clean :: String -> [String]
+clean = map (lowerCase . removePunc) . splitWords
 
 splitWords :: String -> [String]
 splitWords = splitOn " "
