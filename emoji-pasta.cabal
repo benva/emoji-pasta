@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cdf57bb97c12a06a43fd2268db6148caa8ee932d02bcffe3afce308b0753ea4e
+-- hash: d43afe79fe1f4df045046f46ccc9015a3b7713bdcf999417ac15df2eae35ce8c
 
 name:           emoji-pasta
 version:        0.1.0.0
@@ -26,6 +26,7 @@ source-repository head
 
 library
   exposed-modules:
+      Contains
       Emojis
       Lib
       Parse
