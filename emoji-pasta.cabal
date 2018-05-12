@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 39d3f465ab409edb9eee26cc3f0e6dda3d817098af2a4e59dbd1bd0ace3ae77e
+-- hash: 29d42f55907c4bacb282255849b7955b057e2959b1cffd35f41fc674e9c6c6cd
 
 name:           emoji-pasta
 version:        0.1.0.0
@@ -36,6 +36,8 @@ library
   build-depends:
       base >=4.7 && <5
     , split
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010
 
 executable emoji-pasta-exe
@@ -49,12 +51,15 @@ executable emoji-pasta-exe
       base >=4.7 && <5
     , emoji-pasta
     , split
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010
 
 test-suite emoji-pasta-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Spec.String
       Paths_emoji_pasta
   hs-source-dirs:
       test
