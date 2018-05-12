@@ -8,9 +8,9 @@ import Test.Tasty
 containsTest = [containsStringTest, returnStringTest]
 
 containsStringTest :: TestTree
-containsStringTest = testCase "see if string apple is in apple-sauce"
-  (assertEqual "Should return true" True  (Contains.containsString "apple" "apple-sauce"))
+containsStringTest = testCase "Testing containsString"
+  (assertEqual "return true" True  (Contains.containsString "apple" "apple-sauce"))
 
 returnStringTest :: TestTree
-returnStringTest = testCase "return an emoji"
-  (assertEqual "Should return :apple:" ":apple-sauce:"  (Contains.returnString "apple" "apple-sauce"))
+returnStringTest = testCase "Testing returnString"
+  (assertEqual "return :apple-sauce:" ":apple-sauce:"  (Contains.returnString "apple" "apple-sauce"))
