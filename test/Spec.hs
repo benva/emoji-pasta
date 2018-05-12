@@ -1,10 +1,9 @@
 module Main where
 
   import qualified Test.Tasty as Tasty
-  import qualified Spec.Contains as Contains
+  import qualified Spec.String as String
 
-  allTests = Contains.containsTest ++ []
+  allTests = String.containsTest ++ []
 
   main :: IO ()
-  main = do
-    Tasty.defaultMain (Tasty.testGroup "Our Library Tests" allTests )
+  main = Tasty.defaultMain (Tasty.testGroup "Our Library Tests" allTests )

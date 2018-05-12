@@ -26,10 +26,9 @@ source-repository head
 
 library
   exposed-modules:
-      Contains
       Emoji
       Lib
-      Parse
+      String
   other-modules:
       Paths_emoji_pasta
   hs-source-dirs:
