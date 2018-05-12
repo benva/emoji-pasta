@@ -1,4 +1,4 @@
-module Contains (containsString) where
+module Contains ( containsString ) where
 
 import qualified Data.List
 

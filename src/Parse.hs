@@ -1,7 +1,7 @@
 module Parse ( addEmoji, clean, splitWords ) where
 
-import Data.List.Split
-import Data.Char
+import qualified Data.List.Split
+import qualified Data.Char
 
 addEmoji :: String -> [String] -> [String]
 addEmoji emoji [] = []
@@ -11,7 +11,7 @@ clean :: String -> [String]
 clean = map (lowerCase . removePunc) . splitWords
 
 splitWords :: String -> [String]
-splitWords = splitOn " "
+splitWords = Data.List.Split.splitOn " "
 
 specialChars :: String
 specialChars = ",.?!-:;\"\'()=*&^%$#@`~[]{}\\/<>_+"
@@ -20,4 +20,4 @@ removePunc :: String -> String
 removePunc word = [ clean | clean <- word, clean `notElem` specialChars ]
 
 lowerCase :: String -> String
-lowerCase = map toLower
+lowerCase = map Data.Char.toLower

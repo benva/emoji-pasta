@@ -1,6 +1,7 @@
 module Lib ( main ) where
 
 import qualified Parse
+import qualified Emoji
 
 main :: IO ()
 main = do
@@ -8,4 +9,5 @@ main = do
   sentence <- getLine
   let keywords = Parse.clean sentence
   let emojified = Parse.addEmoji "^" (Parse.splitWords sentence)
-  print $ unwords emojified
+  print $ map (`elem` Emoji.table) keywords
+  -- print $ unwords emojified
