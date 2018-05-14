@@ -1,9 +1,15 @@
 module ListMaker where
 
+import qualified Emoji
 import qualified Data.List
 
+kindaRandomEmoji :: String -> Int
+kindaRandomEmoji str = length Emoji.table `mod` length str * 420
+
+
+
 createEmojiList :: String -> [String] ->  [String]
-createEmojiList str [] = []
+createEmojiList str [] = [Emoji.table !! kindaRandomEmoji str]
 createEmojiList str (x:xs)
  | str `Data.List.isInfixOf` x = x : createEmojiList str xs
  | otherwise = createEmojiList str xs
