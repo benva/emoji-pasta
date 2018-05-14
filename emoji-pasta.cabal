@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 29d42f55907c4bacb282255849b7955b057e2959b1cffd35f41fc674e9c6c6cd
+-- hash: e327400ef3baf8247af57e9de3df8ed77c9b5af44cb6c5ceb02d1073bba4d615
 
 name:           emoji-pasta
 version:        0.1.0.0
@@ -28,6 +28,7 @@ library
   exposed-modules:
       Emoji
       Lib
+      ListMaker
       String
   other-modules:
       Paths_emoji_pasta
@@ -59,6 +60,7 @@ test-suite emoji-pasta-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Spec.ListMaker
       Spec.String
       Paths_emoji_pasta
   hs-source-dirs:
