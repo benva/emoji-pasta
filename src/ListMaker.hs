@@ -4,9 +4,7 @@ import qualified Emoji
 import qualified Data.List
 
 kindaRandomEmoji :: String -> Int
-kindaRandomEmoji str = length Emoji.table `mod` length str * 420
-
-
+kindaRandomEmoji str = length Emoji.table `mod` length str + 7
 
 createEmojiList :: String -> [String] ->  [String]
 createEmojiList str [] = [Emoji.table !! kindaRandomEmoji str]
