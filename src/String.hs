@@ -1,28 +1,13 @@
-module String ( addEmoji, clean, contains, findMatches, splitWords ) where
+module String ( clean, split ) where
 
 import qualified Data.List.Split
 import qualified Data.Char
-import qualified Data.List
-import qualified Emoji
-
-addEmoji :: String -> [String] -> [String]
-addEmoji emoji [] = []
-addEmoji emoji (x:y) = x : emoji : addEmoji emoji y
 
 clean :: String -> [String]
-clean = map (lowerCase . removePunc) . splitWords
+clean = map (lowerCase . removePunc) . split
 
-contains :: String -> String -> Bool
-contains = Data.List.isInfixOf
-
--- findEmoji :: String -> String -> String
--- findEmoji word emoji = if word `contains` emoji then ":" ++ emoji ++ ":" else ""
-
-findMatches :: [String] -> [String]
-findMatches keywords = Data.List.intersectBy Data.List.isInfixOf keywords Emoji.table
-
-splitWords :: String -> [String]
-splitWords = Data.List.Split.splitOn " "
+split :: String -> [String]
+split = Data.List.Split.splitOn " "
 
 --
 
