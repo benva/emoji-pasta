@@ -8,9 +8,8 @@ main :: IO ()
 main = do
   putStrLn "Type a sentence that you want to emojify:"
   sentence <- getLine
-  let keywords = String.clean sentence
-  let matches = map (`ListMaker.createEmojiList` Emoji.table) keywords
-  let emojis = ListMaker.chooseEmoji matches
+  print sentence
+  let emojis = map ListMaker.chooseEmojiFromList $ String.clean sentence
   let splitSentence = String.split sentence
   let emojified = ListMaker.addEmoji splitSentence emojis
   print $ unwords emojified

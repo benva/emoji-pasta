@@ -6,9 +6,9 @@ module Spec.ListMaker (listMakerTest) where
   import Test.Tasty
 
   -- all my tests are combined before i export it
-  listMakerTest = [createEmojiListTest]
+  listMakerTest = [chooseEmojiFromListTest]
 
-  createEmojiListTest :: TestTree
-  createEmojiListTest = testCase "Testing createEmojiList"
-    (assertEqual "returns all matches" ["smiley","smile","sweat_smile","smiley_cat","smile_cat"] (ListMaker.createEmojiList "smile" Emoji.table))
+  chooseEmojiFromListTest :: TestTree
+  chooseEmojiFromListTest = testCase "Testing chooseEmojiFromList"
+    (assertEqual "returns a matching Emoji" ":star_struck:" (ListMaker.chooseEmojiFromList "what"))
 
